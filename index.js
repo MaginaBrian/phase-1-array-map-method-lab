@@ -12,5 +12,16 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((line) => {
+    const tokens = line.split(" "); // Split by spaces, not empty string
+    const capitalizedTokens = tokens.map(
+      (token) => token.charAt(0).toUpperCase() + token.slice(1)
+    );
+    
+    const response = capitalizedTokens.join(" "); // Join with spaces
+    return response;
+  });
+};
+
+// Test the function
+console.log(titleCased());
